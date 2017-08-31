@@ -34,7 +34,7 @@
                   </Label>
                   <HBox prefHeight="39.0" prefWidth="430.0">
                      <children>
-                        <TextField fx:id="convert" prefHeight="25.0" prefWidth="168.0" onKeyReleased="#checkInput">
+                        <TextField fx:id="convert" onKeyReleased="#checkInput" prefHeight="25.0" prefWidth="168.0">
                            <HBox.margin>
                               <Insets left="13.0" top="20.0" />
                            </HBox.margin>
@@ -44,25 +44,65 @@
                               <Insets left="13.0" top="20.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button fx:id="conversion" mnemonicParsing="false" text="Convert" onAction="#convert">
+                        <Button fx:id="conversion" mnemonicParsing="false" onAction="#convert" text="Convert">
                            <HBox.margin>
                               <Insets left="13.0" top="20.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
-                  <ChoiceBox fx:id="currency" prefWidth="150.0" value="AUD" disable="true">
+                  <HBox depthTest="DISABLE" prefHeight="28.0" prefWidth="430.0">
+                     <children>
+                        <Label text="Convert From">
+                           <HBox.margin>
+                              <Insets left="90.0" top="2.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="Convert To">
+                           <HBox.margin>
+                              <Insets left="90.0" top="2.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                      <VBox.margin>
-                        <Insets left="120.0" top="20.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
-                      <items>
-                          <FXCollections fx:factory="observableArrayList">
-                              <String fx:value="AUD" />
-                              <String fx:value="EURO" />
-                              <String fx:value="GBP" />
-                          </FXCollections>
-                      </items>
-                  </ChoiceBox>
+                  </HBox>
+                  <HBox prefHeight="81.0" prefWidth="430.0">
+                     <children>
+                        <ChoiceBox fx:id="currency" prefWidth="108.0" value="Months">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Months" />
+                                    <String fx:value="Fortnights" />
+                                    <String fx:value="Weeks" />
+                                   <String fx:value="Quarterly" />
+                                   <String fx:value="Yearly" />
+                                </FXCollections>
+                            </items>
+                           <HBox.margin>
+                              <Insets left="74.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="currency1" layoutX="10.0" layoutY="10.0" prefWidth="108.0" value="Fortnights">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Months" />
+                                 <String fx:value="Fortnights" />
+                                 <String fx:value="Weeks" />
+                                 <String fx:value="Quarterly" />
+                                 <String fx:value="Yearly" />
+                              </FXCollections>
+                           </items>
+                           <HBox.margin>
+                              <Insets left="55.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>
